@@ -2,7 +2,7 @@
   "schemaVersion": "1.0",
   "generatedAt": null,
   "services": [
-    {"id": "website", "name": "Website", "status": "degraded", "note": "Custom-domain HTTPS is awaiting a valid certificate."},
+    {"id": "website", "name": "Website", "status": "operational", "note": "Public website is available over verified HTTPS at meomeoai.dynv6.net."},
     {"id": "meo-cloud-v0", "name": "Meo Cloud V0", "status": "operational"},
     {"id": "meo-remote", "name": "Meo Remote", "status": "experimental"},
     {"id": "pnc", "name": "PNC", "status": "research"},

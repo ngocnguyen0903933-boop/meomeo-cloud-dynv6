@@ -14,9 +14,13 @@ GitHub Pages supports one custom hostname per site, with an exception for its co
 
 The dynv6 zone uses A `185.199.108.153`. There is no AAAA or CNAME at the hostname. MX and SPF remain at the same hostname, so a conflicting CNAME must not be added. Additional redundant GitHub A addresses may be added later without changing MX/SPF, but are not required for this bounded deployment.
 
+CAA at the zone apex is `0 issue "letsencrypt.org"`. This explicit authorization avoids inheriting a CAA lookup failure from the shared parent `dynv6.net`; GitHub's health check had reported `Dnsruby::NXDomain` before this addition. Public DNS and certificate verification remain the acceptance criteria.
+
 ## HTTPS evidence
 
 A successful Actions run alone is not proof of TLS. Independently request the exact hostname with certificate verification enabled, inspect the certificate hostname and validity period, test HTTP-to-HTTPS redirection, and retrieve all public pages/assets/metadata. Record the tested commit and build ID. Do not bypass a certificate warning.
+
+On 9 October 2026, the exact HTTPS hostname returned HTTP 200 with certificate validation enabled. GitHub reported an approved certificate for `meomeoai.dynv6.net`, and HTTPS enforcement was enabled only after this independent check. The health/status documents describe a manually reviewed public service state, not continuous PC health or an uptime guarantee.
 
 ## Credential boundary
 
