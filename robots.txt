@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://meomeoai.mooo.com/sitemap.xml
+Sitemap: https://meomeoai.dynv6.net/sitemap.xml
 

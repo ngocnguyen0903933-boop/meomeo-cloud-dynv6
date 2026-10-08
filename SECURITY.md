@@ -6,7 +6,7 @@ The supported public surface is the currently deployed Meo Cloud V0 website and 
 
 ## Reporting
 
-Please report suspected security issues using [GitHub private vulnerability reporting](https://github.com/ngocnguyen0903933-boop/meomeo-cloud/security/advisories/new). Do not include secrets in public issues, and do not probe private Meo systems. Domain email is not yet available.
+Please report suspected security issues using [GitHub private vulnerability reporting](https://github.com/ngocnguyen0903933-boop/meomeo-cloud/security/advisories/new). Do not include secrets in public issues, and do not probe private Meo systems. General project contact: founder@meomeoai.dynv6.net.
 
 ## Baseline
 
