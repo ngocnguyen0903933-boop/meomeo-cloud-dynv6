@@ -1,8 +1,10 @@
-name: Validate and deploy Pages
+name: Validate and deploy dynv6 Pages
 
 on:
   push:
-    branches: [main]
+    branches: [deploy/dynv6]
+  pull_request:
+    branches: [source-snapshot]
   workflow_dispatch:
 
 permissions:
@@ -25,10 +27,13 @@ jobs:
       - name: Validate public tree
         run: node tools/validate.mjs
       - uses: actions/configure-pages@v5
+        if: github.event_name != 'pull_request'
       - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
         with:
           path: _site
   deploy:
+    if: github.repository == 'ngocnguyen0903933-boop/meomeo-cloud-dynv6' && github.event_name != 'pull_request' && github.ref == 'refs/heads/deploy/dynv6'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
