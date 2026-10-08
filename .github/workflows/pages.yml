@@ -4,7 +4,7 @@ on:
   push:
     branches: [deploy/dynv6]
   pull_request:
-    branches: [source-snapshot]
+    branches: [source-snapshot, deploy/dynv6]
   workflow_dispatch:
 
 permissions:
@@ -26,6 +26,8 @@ jobs:
           node-version: '24'
       - name: Validate public tree
         run: node tools/validate.mjs
+      - name: Check English content and navigation
+        run: node tools/content-check.mjs
       - uses: actions/configure-pages@v5
         if: github.event_name != 'pull_request'
       - uses: actions/upload-pages-artifact@v3

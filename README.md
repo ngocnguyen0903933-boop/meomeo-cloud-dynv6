@@ -36,7 +36,7 @@ DNS uses an A record from `meomeoai.dynv6.net` to GitHub Pages (`185.199.108.153
 
 The dynv6 hostname has MX priority 10 `mx1.improvmx.com`, MX priority 20 `mx2.improvmx.com`, and SPF TXT `v=spf1 include:spf.improvmx.com ~all`. Ngoc confirmed a real inbound message reached the destination inbox but was classified as Spam. This establishes receipt, not guaranteed inbox placement or outbound sending. The old FreeDNS limitation does not apply to these new records.
 
-Keep the original repository, domain association and DNS unchanged. Pull requests against `source-snapshot` validate only; they do not deploy. The deployment job is restricted to this repository and the `deploy/dynv6` branch. See [parallel deployment notes](docs/parallel-deployment.md).
+Keep the original repository, domain association and DNS unchanged. Pull requests against `source-snapshot` or `deploy/dynv6` validate only; they do not deploy. The deployment job is restricted to this repository and the `deploy/dynv6` branch. Content-review branches must not be merged or deployed without separate Owner approval. See [parallel deployment notes](docs/parallel-deployment.md).
 
 ## Public endpoints
 
@@ -45,6 +45,11 @@ Keep the original repository, domain association and DNS unchanged. Pull request
 - `/releases/` and `/api/releases.json`
 - `/api/version.json`
 - `/docs/`
+- `/overview/` — English founder, product, maturity, Claude review history and milestones
+
+## Content evidence policy
+
+Public product summaries distinguish implemented internal work, proof of concept, research and roadmap. Private product records are not published by this website. A historical architecture-review attribution does not establish a production API integration, official partnership or program eligibility. Publicly inspectable website history is linked separately from internal product evidence. No private source, raw research or operational manuals should be added to make a marketing claim look stronger.
 
 ## Security
 

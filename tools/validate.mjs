@@ -4,7 +4,7 @@ import { createHash } from 'node:crypto';
 
 // Deliberate public allowlist. Tooling, Git history and private additions are never deployed.
 const files = ['index.html', '404.html', 'CNAME', 'robots.txt', 'sitemap.xml',
-  'status/index.html', 'releases/index.html', 'docs/index.html', 'health/index.html'];
+  'status/index.html', 'releases/index.html', 'docs/index.html', 'health/index.html', 'overview/index.html'];
 for (const directory of ['assets', 'api']) {
   for (const file of readdirSync(directory)) {
     if (!statSync(join(directory, file)).isFile()) throw new Error(`Unexpected directory: ${file}`);
